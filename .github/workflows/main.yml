@@ -1,0 +1,24 @@
+name: B9 - Deployment on EC2
+
+on: #push, pull_request, create, delete
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    run-on: ubuntu-latest
+
+    step:
+    - name: Checkout code from github repo
+      uses: actions/checkout@v4
+
+    - name: Run some commands
+      run: |
+
+        whoami
+        ls -al
+        pwd
+        cat index.html
+
+        
